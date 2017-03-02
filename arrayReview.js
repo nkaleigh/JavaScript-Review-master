@@ -2,7 +2,15 @@ var threeItems = [1,2,3];
 //create a function named 'last' that returns the last item from 'threeItems'
 //alert the result of your function
 
-  //code here
+function last(threeItems) {
+  for (var i = 0; i < threeItems.length; i++) {
+    if (i === threeItems.length - 1) {
+      alert(threeItems[i]);
+    }
+  }
+} 
+
+//code here
 
 
 
@@ -13,7 +21,14 @@ var threeItems = [1,2,3];
 //Loop through evenArray removing all values that aren't even 
 var evenArray = [1,2,3,6,22,98,45,23,22,12];
 
-  //code here
+for (var i = 0; i < evenArray.length; i++) {
+  if (evenArray[i] % 2 !== 0) {
+    evenArray.splice(i, 1);
+    i--;
+  }
+}
+
+console.log(evenArray);  //code here
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
@@ -26,7 +41,19 @@ var getRandomArbitrary = function() {
 }
 var randomArray = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 
-  //code here
+
+
+function findIfRandomNumberIsInArray(randomArray) {
+  var arr1 = [];
+  for (var i = 0; i < randomArray.length; i++) {
+    if (getRandomArbitrary() === randomArray[i]) {
+      alert(true);
+    } 
+  } 
+  alert(false);
+} 
+
+findIfRandomNumberIsInArray(randomArray);  //code here
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
@@ -37,7 +64,8 @@ var randomArray = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 var first = [1,2,3,4,5];
 var second;
 
-  //code here
+second = first;
+second.push(6, 7);  //code here
 
 alert(first) //[1,2,3,4,5];
 alert(second) //[1,2,3,4,5,6,7];
@@ -51,7 +79,16 @@ alert(second) //[1,2,3,4,5,6,7];
 //write a function called longest that takes in our sentence variable, and returns the longest word in that sentence.
 var sentence = "Dev Mountain is the best"
 
-  //code here
+function longest(sentence) {
+  sentence = sentence.split(" ");
+  var sp = sentence[0];
+  for (var i = 1; i < sentence.length; i++) {
+    if (sentence[i].length > sp.length) {
+      sp = sentence[i];
+    }
+  }
+  return sp;
+}  //code here
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
@@ -62,7 +99,9 @@ var sentence = "Dev Mountain is the best"
 var myPoem = 'What is a jQuery but a misunderstood object?'
 //What is a jQuery but a misunderstood object? --> What Is A JQuery But A Misunderstood Object?
 
-  //code here
+function capitalize() {
+  myPoem = myPoem.toUpperCase();
+}  //code here
 
 
 
@@ -72,3 +111,19 @@ var myPoem = 'What is a jQuery but a misunderstood object?'
 
 var theOdyssey = "function expression or function declaration? Tis an obvious choice";
 //Write a function called vowelCounter that takes in a string (theOdyssey) and returns how many vowels are in that string.
+
+
+function vowelCounter(theOdyssey) {
+  theOdyssey = theOdyssey.toLowerCase();
+  var vowels = "aeiou";
+  // OR var vowels = ["a", "e", "i", "o", "u"];
+  var vowelArr = [];
+  for (var i = 0; i < theOdyssey.length; i++) {
+    if (vowels.indexOf(theOdyssey[i]) !== -1) {
+      vowelArr.push(theOdyssey[i]);
+    }
+  }
+  return vowelArr;
+}
+
+vowelCounter(theOdyssey);
