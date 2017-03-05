@@ -160,6 +160,15 @@ getUserById('16t', users, function(user){
 
 
 //Looks through each value in the list, returning the first one that passes a truth test 
+
+function find(arr, cb) {
+ for (var i = 0; i < arr.length; i++) {
+  if (cb(arr[i])) {
+     return arr[i];
+  }
+ } 
+}
+
 var numbers  = [1, 2, 3, 4, 5, 6];
 find(numbers, function(num){ 
   return num % 2 == 0; //should return 2
